@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axel Estillore | Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Button for Dark Mode */
+    #darkModeToggle {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 1rem;
+    }
+
+    #darkModeToggle:hover {
+      background: #555;
+    }
+
+    /* Sections */
+    section {
+      padding: 2rem;
+      margin: 1rem auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    section ul {
+      padding-left: 20px;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input, form textarea, form button {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #555;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #333;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .dark-mode section {
+      background-color: #444;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <button id="darkModeToggle">Toggle Dark Mode</button>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm <strong>Axel Estillore</strong>, a passionate Frontend Developer and UI/UX enthusiast. 
+      I enjoy creating intuitive and visually appealing designs that enhance user experiences. My goal is to craft seamless, engaging, 
+      and impactful digital solutions.
+    </p>
+    <p><strong>Full Name:</strong> Estillore Axel M.<br>
+    <strong>Birth Date:</strong> May 13, 2004</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p>
+      <strong>Bachelor of Science in Information Technology</strong><br>
+      <em>University of the Cordilleras</em>
+    </p>
+    <p>
+      Specializing in Frontend Development and UI/UX Design, I've gained proficiency in HTML, CSS, JavaScript, and user experience principles. 
+      My education has equipped me with a strong foundation for building captivating and user-friendly digital solutions.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p><strong>Freelancer</strong></p>
+    <p>
+      Worked on various projects, focusing on designing and developing responsive websites, 
+      improving user interface designs, and enhancing user experience for diverse clients.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Proficient in HTML, CSS, and JavaScript</li>
+      <li>Experienced in Responsive Web Design</li>
+      <li>Skilled in UI/UX Design Principles and Tools</li>
+      <li>Familiarity with Frontend Frameworks (e.g., Bootstrap)</li>
+      <li>Understanding of Web Accessibility and Cross-Browser Compatibility</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>
+      Check out one of my projects: <a href="https://wapakelzz.github.io/" target="_blank">My Project</a>
+    </p>
+    <p>More projects coming soon!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Information</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+      
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Axel Estillore. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Contact Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill out all fields.");
+      } else {
+        alert("Thank you for your message, " + name + "!");
+        this.reset();
+      }
+    });
+
+    // Dark Mode Toggle
+    const toggleButton = document.getElementById("darkModeToggle");
+    toggleButton.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
